@@ -1,27 +1,19 @@
 <template>
   <div>
-    <h1 class="center">Welcome.</h1>
-      <v-row>
-          <v-col xs9>
-              <v-text-field
-                      name="repo-name"
-                      label="Repo Name"
-              ></v-text-field>
-          </v-col>
-          <v-col xs3>
-              <v-btn light flat>Add Repo</v-btn>
-          </v-col>
-      </v-row>
-      <h3 class="center"> Repos</h3>
+    <h1 class="center">Welcome</h1>
+      <RepoSelect></RepoSelect>
+    <h3 class="center"> Repos</h3>
       <RepoCard></RepoCard>
   </div>
 </template>
 
 <script>
   import RepoCard from './LandingPageView/RepoCard.vue';
+  import RepoSelect from './LandingPageView/RepoSelect.vue';
   export default {
     components: {
       RepoCard,
+      RepoSelect,
     },
     name: 'landing-page',
   };
