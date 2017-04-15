@@ -24,6 +24,7 @@
     data() {
       return {
         year: new Date().getFullYear(),
+        repos: [],
       };
     },
     store,
