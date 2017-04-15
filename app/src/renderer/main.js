@@ -7,6 +7,8 @@ import Vuetify from 'vuetify';
 import App from './App';
 import routes from './routes';
 
+import 'font-awesome/css/font-awesome.min.css';
+
 Vue.use(Electron);
 Vue.use(Resource);
 Vue.use(Router);

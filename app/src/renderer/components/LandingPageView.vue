@@ -1,22 +1,27 @@
 <template>
   <div>
-    <img src="./LandingPageView/assets/logo.png" alt="electron-vue">
-    <h1>Welcome.</h1>
-    <current-page></current-page>
-    <versions></versions>
-    <links></links>
+    <h1 class="center">Welcome.</h1>
+      <v-row>
+          <v-col xs9>
+              <v-text-field
+                      name="repo-name"
+                      label="Repo Name"
+              ></v-text-field>
+          </v-col>
+          <v-col xs3>
+              <v-btn light flat>Add Repo</v-btn>
+          </v-col>
+      </v-row>
+      <h3 class="center"> Repos</h3>
+      <RepoCard></RepoCard>
   </div>
 </template>
 
 <script>
-  import CurrentPage from './LandingPageView/CurrentPage';
-  import Links from './LandingPageView/Links';
-  import Versions from './LandingPageView/Versions';
+  import RepoCard from './LandingPageView/RepoCard.vue';
   export default {
     components: {
-      CurrentPage,
-      Links,
-      Versions,
+      RepoCard,
     },
     name: 'landing-page',
   };
@@ -26,5 +31,9 @@
   img {
     margin-top: -25px;
     width: 450px;
+  }
+
+  .center {
+    text-align: center;
   }
 </style>
