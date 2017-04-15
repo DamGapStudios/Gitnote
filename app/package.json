@@ -1,6 +1,6 @@
 {
-  "name": "gitnote",
-  "version": "0.0.0",
+  "name": "Gitnote",
+  "version": "0.0.1",
   "description": "Github Notifications cross-platform!",
   "main": "./dist/main.js",
   "dependencies": {
