@@ -40,7 +40,7 @@
       data() {
         return {
           repoName: 'GitNote',
-          repoAuthor: 'Adrian Dunham, Anthony Garera',
+          repoAuthor: 'DamGapStudios',
           repoURL: 'https://github.com/DamGapStudios/Gitnote',
           repoDescription: 'A project to notify you when someone pushed something to a repo',
         };
