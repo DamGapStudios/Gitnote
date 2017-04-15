@@ -26,7 +26,11 @@ let mainConfig = {
       {
         test: /\.node$/,
         loader: 'node-loader'
-      }
+      },
+        {
+            test: /\.styl$/,
+            loader: ['style', 'css', 'stylus']
+        }
     ]
   },
   node: {
