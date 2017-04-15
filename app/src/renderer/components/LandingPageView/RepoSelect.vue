@@ -43,6 +43,7 @@
             // get body data
             this.someData = response.body;
             console.log(this.someData);
+            this.$setItem(this.someData.id, this.someData);
           },
           response => {
              // error callback

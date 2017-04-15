@@ -112,6 +112,7 @@
     "webpack-merge": "^2.4.0"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "vue-localforage": "^0.2.5"
   }
 }
