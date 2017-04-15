@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="center">Welcome</h1>
+    <h1 class="center code-words">Welcome</h1>
       <RepoSelect></RepoSelect>
     <h3 class="center"> Repos</h3>
       <RepoCard></RepoCard>
@@ -27,5 +27,9 @@
 
   .center {
     text-align: center;
+  }
+
+  .code-words {
+      font-family:	Courier New, monospace;
   }
 </style>
