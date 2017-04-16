@@ -29,6 +29,7 @@
             <v-card-text>
                 <h5>{{ repoOwner }}</h5>
                 <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repoStars }}
+                <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repoIssues }}
             </v-card-text>
             <v-card-row actions>
                 <v-btn flat class="green--text darken-1" :href='repoURL'>View Repo</v-btn>
@@ -40,7 +41,7 @@
 <script>
     import store from 'renderer/vuex/store';
     export default {
-      props: ['repoName', 'repoOwner', 'repoURL', 'repoStars'],
+      props: ['repoName', 'repoOwner', 'repoURL', 'repoStars', 'repoIssues'],
       store,
     };
 </script>

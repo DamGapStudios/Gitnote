@@ -19,7 +19,7 @@
       </v-col>
     </v-row>
     <h3 class="center"> Repos</h3>
-      <RepoCard v-for="repo in repos" :repo-name='repo.value.name' :repo-owner='repo.value.owner.login' :repo-url="repo.value.svu_url" :repo-stars="repo.value.stargazers_count"></RepoCard>
+      <RepoCard v-for="repo in repos" :repo-name='repo.value.name' :repo-owner='repo.value.owner.login' :repo-url="repo.value.svu_url" :repo-stars="repo.value.stargazers_count" :repo-issues="repo.value.open_issues"></RepoCard>
   </div>
 </template>
 
