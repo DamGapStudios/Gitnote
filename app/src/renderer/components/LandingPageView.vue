@@ -19,7 +19,7 @@
       </v-col>
     </v-row>
     <h3 class="center"> Repos</h3>
-      <RepoCard v-for="repo in repos" :repo-name='repo.value.name' :repo-owner='repo.value.owner.login' :repo-url="repo.value.svu_url" :repo-stars="repo.value.stargazers_count" :repo-issues="repo.value.open_issues"></RepoCard>
+      <RepoCard v-for="repo in repos" :repo='repo.value'></RepoCard>
   </div>
 </template>
 
@@ -67,7 +67,9 @@
           const id = this.someData.id;
           const data = this.someData;
           this.$setItem(id, data);
-          this.repos.push({ id, data });
+          this.repos.push({ key: id, value: data });
+// eslint-disable-next-line no-console
+          console.log(this.repos);
         },
         response => {
                 // error callback
@@ -92,4 +94,5 @@
   .code-words {
       font-family:	Courier New, monospace;
   }
+
 </style>

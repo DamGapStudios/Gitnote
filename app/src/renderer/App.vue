@@ -1,5 +1,5 @@
 <template xmlns:v-badge="http://www.w3.org/1999/xhtml">
-  <div id="#app">
+  <div id="#app" class="darkMode">
     <v-app id="example-1">
       <v-toolbar>
         <v-toolbar-title>
@@ -38,4 +38,8 @@
     .container {
         padding 10px
     }
+
+  .darkMode {
+    background-color black
+  }
 </style>

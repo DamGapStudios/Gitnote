@@ -3,7 +3,7 @@
         <v-card class="padding">
             <v-card-row class="green darken-1">
                 <v-card-title>
-                    <span class="white--text">{{ repoName }}</span>
+                    <span class="white--text">{{ repo.name }}</span>
                     <v-spacer></v-spacer>
                     <div>
                         <v-menu id="repoActions" bottom left origin="top right">
@@ -27,12 +27,12 @@
                 </v-card-title>
             </v-card-row>
             <v-card-text>
-                <h5>{{ repoOwner }}</h5>
-                <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repoStars }}
-                <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repoIssues }}
+                <h5>{{ repo.owner.login }}</h5>
+                <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repo.stargazers_count }}
+                <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repo.open_issues}}
             </v-card-text>
             <v-card-row actions>
-                <v-btn flat class="green--text darken-1" :href='repoURL'>View Repo</v-btn>
+                <v-btn flat class="green--text darken-1" :href='repo.html_url'>View Repo</v-btn>
             </v-card-row>
         </v-card>
     </div>
@@ -41,8 +41,12 @@
 <script>
     import store from 'renderer/vuex/store';
     export default {
-      props: ['repoName', 'repoOwner', 'repoURL', 'repoStars', 'repoIssues'],
+      props: ['repo'],
       store,
+      mounted() {
+// eslint-disable-next-line no-console
+        console.log(this.repo);
+      },
     };
 </script>
 
