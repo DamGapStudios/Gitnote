@@ -66,7 +66,15 @@
           console.log(this.someData);
           const id = this.someData.id;
           const data = this.someData;
+          const name = this.someData.name;
           this.$setItem(id, data);
+          const myNotification = new Notification('GitNot', {
+            body: `${name} repo added`,
+          });
+          myNotification.onclick = () => {
+// eslint-disable-next-line no-console
+            console.log('Notification clicked');
+          };
           this.repos.push({ key: id, value: data });
 // eslint-disable-next-line no-console
           console.log(this.repos);

@@ -33,6 +33,7 @@
             </v-card-text>
             <v-card-row actions>
                 <v-btn flat class="green--text darken-1" :href='repo.html_url'>View Repo</v-btn>
+                <v-btn flat class="green--text darken-1" @click.native='sendNotifications()'>Send Notification</v-btn>
             </v-card-row>
         </v-card>
     </div>
@@ -46,6 +47,18 @@
       mounted() {
 // eslint-disable-next-line no-console
         console.log(this.repo);
+      },
+      methods: {
+        sendNotifications() {
+          const myNotification = new Notification('Title', {
+            body: 'Lorem Ipsum Dolor Sit Amet',
+          });
+
+          myNotification.onclick = () => {
+// eslint-disable-next-line no-console
+            console.log('Notification clicked');
+          };
+        },
       },
     };
 </script>
