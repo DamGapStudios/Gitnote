@@ -13,7 +13,7 @@
                             <v-list>
                                 <v-list-item>
                                     <v-list-tile>
-                                        <v-list-tile-title>Remove Card</v-list-tile-title>
+                                        <v-list-tile-title><i class="fa fa-trash" aria-hidden="true"></i> Remove Card</v-list-tile-title>
                                     </v-list-tile>
                                 </v-list-item>
                                 <v-list-item>
@@ -29,7 +29,7 @@
             <v-card-text>
                 <h5>{{ repo.owner.login }}</h5>
                 <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repo.stargazers_count }}
-                <i class="fa fa-star yellow--text" aria-hidden="true"></i>{{ repo.open_issues}}
+                <i class="fa fa-exclamation-triangle red--text" aria-hidden="true"></i>{{ repo.open_issues}}
             </v-card-text>
             <v-card-row actions>
                 <v-btn flat class="green--text darken-1" :href='repo.html_url'>View Repo</v-btn>
@@ -52,6 +52,6 @@
 
 <style lang="stylus">
     .padding{
-        padding-bottom 10px
+        margin-bottom 10px
     }
 </style>
