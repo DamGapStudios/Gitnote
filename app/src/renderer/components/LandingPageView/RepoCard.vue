@@ -50,8 +50,8 @@
       },
       methods: {
         sendNotifications() {
-          const myNotification = new Notification('Title', {
-            body: 'Lorem Ipsum Dolor Sit Amet',
+          const myNotification = new Notification('GitNote', {
+            body: `${this.repo.name} by ${this.repo.owner.login}`,
           });
 
           myNotification.onclick = () => {
