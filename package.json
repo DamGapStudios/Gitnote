@@ -113,6 +113,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "vue": "^2.2.6",
     "vue-localforage": "^0.2.5"
   }
 }

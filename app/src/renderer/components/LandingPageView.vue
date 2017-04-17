@@ -40,6 +40,9 @@
         }
       });
     },
+    created() {
+      this.notifications();
+    },
     components: {
       RepoCard,
       RepoSelect,
@@ -84,6 +87,16 @@
 // eslint-disable-next-line no-console
           console.log(response);
         });
+      },
+      notifications() {
+        const myNotification = new Notification('GitNot', {
+          body: 'Test Notification',
+        });
+        setTimeout(this.notifications, 2000);
+        myNotification.onclick = () => {
+// eslint-disable-next-line no-console
+          console.log('Notification clicked');
+        };
       },
     },
   };
