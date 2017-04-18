@@ -29,6 +29,10 @@
   export default {
     mounted() {
       this.$iterateStorage((value, key) => {
+        this.currentDate = new Date();
+        this.minusMinute = new Date(this.currentDate - (1000 * 60)).toISOString();
+// eslint-disable-next-line no-console
+        console.log(this.minusMinute);
         this.repos.push({ key, value });
 //          console.log all the kay/value pairs
 // eslint-disable-next-line no-console
@@ -41,7 +45,9 @@
       });
     },
     created() {
-      this.notifications();
+//      this.currentDate = new Date();
+//      this.minusMinute = new Date(this.currentDate - (1000 * 60)).toISOString();
+//      this.notifications(this.minusMinute);
     },
     components: {
       RepoCard,
@@ -88,15 +94,24 @@
           console.log(response);
         });
       },
-      notifications() {
-        const myNotification = new Notification('GitNot', {
-          body: 'Test Notification',
-        });
-        setTimeout(this.notifications, 2000);
-        myNotification.onclick = () => {
+      notifications(currentTime) {
+        this.$http.get(`https://api.github.com/repos/DamGapStudios/GitNote/commits?since${currentTime}`).then(response => {
+          this.someData = response.body;
+          this.date = new Date();
 // eslint-disable-next-line no-console
-          console.log('Notification clicked');
-        };
+          console.log(this.date - (1000 * 60));
+          const author = this.someData;
+          const myNotification = new Notification('GitNote', {
+            body: `${author} updated`,
+          });
+          this.currentDate = new Date();
+          this.minusMinute = new Date(this.currentDate - (1000 * 60)).toISOString();
+          setTimeout(this.notifications(this.minusMinute), 60000);
+          myNotification.onclick = () => {
+// eslint-disable-next-line no-console
+            console.log('Notification clicked');
+          };
+        });
       },
     },
   };
